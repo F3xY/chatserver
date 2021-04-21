@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Chat - Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <script src="profile.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <h1>Profile</h1>
+        <form method="GET" action="">
+          <fieldset>
+            <legend>Personal details</legend>
+            <p>
+              <label for="firstname">First name<input class="formular" id="firstname" name="firstname" type="text" value=""/></label>
+            </p>
+            <p>
+              <label for="lastname">Last name<input class="formular" id="lastname" name="lastname" type="text" value=""/></label>
+            </p>
+            <p>
+              <label for="email">Email<input class="formular" id="email" name="email" type="email" value=""/></label>
+            </p>
+            <p>
+              <label for="zipcode">ZIP Code<input class="formular" id="zipcode" name="zipcode" type="text" value=""/></label>
+            </p>
+            <p>
+              <label for="city">City<input class="formular" id="city" name="city" type="text" value=""/></label>
+            </p>
+            <p>
+              <label for="country">Country<input class="formular" id="country" name="country" type="text" value=""/></label>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Profile</legend>
+            <p>
+              <label for="nickname">Nickname<input class="formular" id="nickname" name="nickname" type="text" value=""/></label>
+            </p>
+            <p>Avatar</p>
+            <ul>
+              <li>
+                <label for="avatar1">
+                  <img src="../z%20-%20img/avatar_icon_1.svg" height="64" width="64" alt="Avatar 1" />
+                </label>
+              </li>
+              <li>
+                <label for="avatar2">
+                  <img src="../z%20-%20img/avatar_icon_2.svg" height="64" width="64" alt="Avatar 2" />
+                </label>
+              </li>
+              <li>
+                <label for="avatar3">
+                  <img src="../z%20-%20img/avatar_icon_3.svg" height="64" width="64" alt="Avatar 3" />
+                </label>
+              </li>
+              <li>
+                <label for="avatar4">
+                  <img src="../z%20-%20img/avatar_icon_4.svg" height="64" width="64" alt="Avatar 4" />
+                </label>
+              </li>
+            </ul>
+            <label for="avatar"></label>
+            <p>
+              <label for="profiledescription">Description</label>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferences</legend>
+            <p>Background image</p>
+            <ul>
+              <li>
+                <label for="backgroundimage1">
+                  <img src="../z%20-%20img/background_1_640.jpg" alt="Background 1" />
+                </label>
+              </li>
+              <li>
+                <label for="backgroundimage2">
+                  <img src="../z%20-%20img/background_2_640.jpg" alt="Background 2" />
+                </label>
+              </li>
+              <li>
+                <label for="backgroundimage3">
+                  <img src="../z%20-%20img/background_3_640.jpg" alt="Background 3" />
+                </label>
+              </li>
+              <li>
+                <label for="backgroundimage4">
+                  <img src="../z%20-%20img/background_4_640.jpg" alt="Background 4" />
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <p>
+            <input type="submit" value="Save" />
+          </p>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>

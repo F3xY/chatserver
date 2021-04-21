@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <script src="chat.js"></script>
+    <script>getAll()</script>
+</head>
+<body onload="loadJava()">
+<header>
+    <h1>Chat</h1>
+    <nav>
+        <ul>
+            <li style="padding-right: 1rem">
+                <label for="delUsername">Delete User</label><input id="delUsername" placeholder="Username">
+            </li>
+            <li style="padding-left: 0">
+                <button id="delButton" onclick="deleteUser()">Delete</button>
+            </li>
+            <li>
+                <a href="chat.html">Chat</a>
+            </li>
+            <li>
+                <a href="../about/about.html">About</a>
+            </li>
+            <li>
+                <a href="../profile/profile.html">Profile</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <article>
+        <div id="messageList" class="messages">
+        </div>
+
+
+        <form method="GET" action="">
+            <textarea name="message" id="message" cols="80" rows="3"></textarea>
+            <input type="submit" value="Send"/>
+        </form>
+    </article>
+
+    <aside>
+        <ul id="userList">
+
+        </ul>
+    </aside>
+</main>
+
+<footer id="pfooter">
+</footer>
+</body>
+</html>

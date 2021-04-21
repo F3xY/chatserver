@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+footer {
+    background-color: aqua;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-left: 1rem;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header li {
+    list-style-type: none;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+article {
+    height: calc(100vh - 130px);
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+
+article, input {
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    width: 20%;
+    background-color: aquamarine;
+}
+
+p {
+    margin-left: 1rem;
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 5%;
+}
+
+section {
+    background-color: cadetblue;
+}
+
+.messages {
+    overflow: auto;
+}
