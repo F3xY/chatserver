@@ -1,7 +1,7 @@
 
 
 function newUser(nickname){
-    const serverCon = 'http://localhost:5001/api/Users'
+    const serverCon = 'http://localhost:8080/api/Users'
     fetch(serverCon, {
         headers: {
             'Accept': 'application/json',

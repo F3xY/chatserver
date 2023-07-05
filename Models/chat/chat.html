@@ -9,46 +9,31 @@
     <script>getAll()</script>
 </head>
 <body onload="loadJava()">
-<header>
-    <h1>Chat</h1>
-    <nav>
-        <ul>
-            <li style="padding-right: 1rem">
-                <label for="delUsername">Delete User</label><input id="delUsername" placeholder="Username">
-            </li>
-            <li style="padding-left: 0">
-                <button id="delButton" onclick="deleteUser()">Delete</button>
-            </li>
-            <li>
-                <a href="chat.html">Chat</a>
-            </li>
-            <li>
-                <a href="../about/about.html">About</a>
-            </li>
-            <li>
-                <a href="../profile/profile.html">Profile</a>
-            </li>
-        </ul>
-    </nav>
+
+
+<header class="site-header">
+    <div class="container">
+        <a href="#" class="title">Chat App</a>
+        <nav class="nav">
+            <ul>
+                <li><a class="hover-underline-animation" href="../about/about.html">About</a></li>
+                <li><a class="hover-underline-animation" href="../profile/profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
-    <article>
-        <div id="messageList" class="messages">
-        </div>
-
-
+    <div class="purple">
+        <div id="messageList" class="pink"></div>
         <form method="GET" action="">
-            <textarea name="message" id="message" cols="80" rows="3"></textarea>
+            <textarea name="message" id="message" rows="2"></textarea>
             <input type="submit" value="Send"/>
         </form>
-    </article>
+    </div>
+    <ul id="userList" class="user-list">
+    </ul>
 
-    <aside>
-        <ul id="userList">
-
-        </ul>
-    </aside>
 </main>
 
 <footer id="pfooter">

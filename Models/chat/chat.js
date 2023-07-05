@@ -1,7 +1,7 @@
 let users = new Array();
 let messages = new Array();
 
-const requestArray = ["http://localhost:5001/api/Users", "http://localhost:5001/api/Messages"];
+const requestArray = ["http://localhost:8080/api/Users", "http://localhost:8080/api/Messages"];
 
 function getAll() {
     Promise.all(requestArray.map((request) => {
@@ -56,11 +56,9 @@ function addUser(user) {
 
     li.appendChild(avatar);
     */
-    let nickname = document.createElement("span");
-    nickname.appendChild(document.createTextNode(user.nickname));
-    li.appendChild(nickname);
+    li.innerText = user.nickname;
 
-    document.getElementById("userList").appendChild(li);
+    // document.getElementById("userList").appendChild(li);
 
 }
 function removeUser(id){
@@ -82,11 +80,18 @@ function initMessages() {
 
 function addMessages(message) {
     let section = document.createElement("section");
+    section.className = "message";
     section.setAttribute("id", message.id);
 
     let userName = document.createElement("span");
-    userName.appendChild(document.createTextNode( getUserById(message.user_id)));
+    userName.appendChild(document.createTextNode(getUserById(message.userId)));
     section.appendChild(userName);
+    console.log(message.userId)
+    console.log(localStorage.getItem("id"))
+    if (parseInt(message.userId) === parseInt(localStorage.getItem("id"))){
+        section.className = "own-message";
+        console.log("TT")
+    }
 
 
 
@@ -104,7 +109,7 @@ function addMessages(message) {
 function deleteUser(){
     let username = document.getElementById('delUsername').value;
     let id = getIdByUsername(username);
-    const serverCon = 'http://localhost:5001/api/Users/' + id;
+    const serverCon = 'http://localhost:8080/api/Users/' + id;
 
     if (username === localStorage.getItem("nickname")){
         alert("You can't delete yourself")
@@ -132,7 +137,7 @@ function deleteUser(){
 }
 
 function startWebSocket(){
-    const ws = new WebSocket('ws://localhost:5001/ws')
+    const ws = new WebSocket('ws://localhost:8080/ws')
 
     ws.onerror = function (event) {
         console.error('Websocket Error', event);
@@ -164,11 +169,18 @@ function handleMessage(input){
 
 function loadJava(){
     startWebSocket();
-    var input = document.getElementById("delUsername");
-    input.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            deleteUser();
-        }
-    });
+    // var input = document.getElementById("delUsername");
+    // var messageInput = document.getElementById("message");
+    // messageInput.addEventListener("keyup", function(event) {
+    //     if (event.keyCode === 13) {
+    //         event.preventDefault();
+    //         handleMessage(messageInput.textContent);
+    //     }
+    // });
+    // input.addEventListener("keyup", function(event) {
+    //     if (event.keyCode === 13) {
+    //         event.preventDefault();
+    //         deleteUser();
+    //     }
+    // });
 }
