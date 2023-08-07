@@ -6,6 +6,9 @@
     <title>Chat</title>
     <link rel="stylesheet" href="chat.css">
     <script src="chat.js"></script>
+    <script src="https://kit.fontawesome.com/b97472a2a6.js" crossorigin="anonymous"></script>
+    <script data-require="moment.js@2.10.2" data-semver="2.10.2"
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
     <script>getAll()</script>
 </head>
 <body onload="loadJava()">
@@ -20,23 +23,24 @@
                 <li><a class="hover-underline-animation" href="../profile/profile.html">Profile</a></li>
             </ul>
         </nav>
+        <button class="logout-button" onclick="logout()">Logout</button>
+        <button class="delete-button" onclick="deleteUser()">Delete</button>
     </div>
 </header>
 
 <main>
     <div class="purple">
-        <div id="messageList" class="pink"></div>
-        <form method="GET" action="">
-            <textarea name="message" id="message" rows="2"></textarea>
-            <input type="submit" value="Send"/>
-        </form>
+        <ul id="messageList" class="pink"></ul>
+        <div class="form">
+            <textarea id="messageInput" rows="2"></textarea>
+            <input class="submitButton" type="button" value="Send"/>
+        </div>
     </div>
     <ul id="userList" class="user-list">
     </ul>
-
 </main>
 
-<footer id="pfooter">
+<footer class="footer" id="pfooter">
 </footer>
 </body>
 </html>

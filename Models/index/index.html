@@ -9,13 +9,11 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body onload="createInput()">
+<body>
 <main>
-    <form>
-        <p>
-            <label>Nickname</label>
-        </p>
-        <div id="nicknameInput"></div>
+    <form action="javascript:setNickname(document.getElementById('nicknameInput').value)">
+        <label for="nicknameInput" class="nicknameInputLabel">Nickname</label><br>
+        <input type="text" id="nicknameInput" name="nicknameInput">
         <br>
         <!--
         <p>Avatar</p>
@@ -47,7 +45,7 @@
             </li>
         </ul>
         -->
-        <button type="button" onclick="setNickname(document.getElementById('nicknameInputField').value)">Login</button>
+        <button type="submit" class="submitButton">Login</button>
     </form>
 </main>
 </body>

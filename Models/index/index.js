@@ -40,20 +40,6 @@ function getNickname() {
     return (localStorage.getItem("nickname"));
 }
 
-function createInput() {
-    let input = document.createElement("input");
-    input.setAttribute('id', 'nicknameInputField');
-    input.setAttribute("type", "text");
-    if (getNickname() == null){
-        input.setAttribute("value", " ");
-    }
-    else{
-        input.setAttribute("value", getNickname());
-    }
-
-    document.getElementById("nicknameInput").appendChild(input);
-}
-
 function chatWindow(){
     window.location.href = "../chat/chat.html"
 }

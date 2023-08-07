@@ -7,12 +7,15 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
 p {
     color: #1F2023FF;
 }
-span{
+
+span {
     color: #1F2023FF;
 }
+
 a {
     text-decoration: none;
     color: #1F2023FF;
@@ -24,16 +27,15 @@ header {
 
 main {
     display: flex;
-    padding: 0;
     margin: 0 0 0 15vw;
-    height: 90vh
+    height: 88vh;
 }
 
-form {
+.form {
     font-size: 18px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 }
 
 textarea {
@@ -54,7 +56,7 @@ textarea:focus {
     border-color: #1F2023FF;
 }
 
-input {
+.submitButton {
     margin-left: 10px;
     display: inline-block;
     outline: none;
@@ -67,13 +69,52 @@ input {
     background: #FB8500;
     line-height: 1.15;
     font-size: 16px;
+    transition: .25s;
 }
 
-input:hover {
-    transition: all .25s ease;
-    box-shadow:0 0 0 3px #FB8500;
+.submitButton:hover {
+    box-shadow: 0 0 0 2px #FB8500;
 }
 
+.logout-button {
+    background-color: #FB8500;
+    color: #1F2023FF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: .25s;
+}
+
+.logout-button:hover {
+    font-size: 14px;
+    box-shadow: 0 0 0 2px #FB8500;
+}
+
+.delete-button {
+    background-color: #FB8500;
+    color: #1F2023FF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
+    transition: .25s;
+}
+
+.delete-button:hover {
+    font-size: 14px;
+    box-shadow: 0 0 0 2px #FB8500;
+}
 
 .title {
     font-weight: bold;
@@ -82,6 +123,7 @@ input:hover {
 
 .site-header {
     height: auto;
+    position: relative;
 }
 
 .container {
@@ -142,19 +184,25 @@ input:hover {
     padding: 0;
     display: flex;
     flex-direction: column;
+    overflow: auto;
     margin: 0;
     flex: 1;
+    height: 92vh;
 }
 
 .user-list li {
-    padding: 1vw 0 0 1vw;
+    width: 12vw;
+    margin: 10px 0 5px 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 8px;
+    overflow-wrap: break-word;
+    background-color: #FB8500;
 }
 
 .purple {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 20px;
     width: 70vw;
 }
 
@@ -168,24 +216,58 @@ input:hover {
 .message {
     background-color: #8ECAE6;
     width: 40%;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    padding: 10px;
+    margin: 10px 0 10px 10px;
+    padding: 0 10px 0 10px;
     border-radius: 15px;
     overflow-wrap: break-word;
+}
+
+.messageHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.messageText {
+    margin: 0 10px 0 5px;
+}
+
+.username {
+    margin: 10px 0 10px 0;
+    font-weight: 600;
+}
+
+.timestamp {
+    margin: 0 10px 5px 0;
+    font-size: small;
+    float: right;
+}
+
+.fa-trash {
+    padding: 10px;
+    opacity: 0;
+    transition: .25s;
+    color: #023047;
+}
+
+.fa-trash:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+}
+
+.own-message:hover i {
+    opacity: 100;
 }
 
 .own-message {
     background-color: #FFB703;
     width: 40%;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin: 10px 10px 10px auto;
+    padding: 0 0 0 10px;
     border-radius: 15px;
     overflow-wrap: break-word;
-    margin-left: auto;
-    margin-right: 10px;
 }
-
 
 /*body {*/
 /*    height: 100vh;*/
@@ -321,9 +403,14 @@ footer {
 /*    color: #222;*/
 /*}*/
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    color: white;
+}
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -334,5 +421,28 @@ footer {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background-color: #FB8500;
+    background-color: rgba(251, 133, 0, 0.38);
+}
+
+.dumpsterButton {
+    z-index: 1;
+}
+
+section.own-message {
+    transition: height 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.deleted-item {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.deleted-item section.own-message {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
 }
